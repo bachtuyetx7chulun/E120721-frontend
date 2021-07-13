@@ -1,0 +1,22 @@
+.linechart {
+	width: 500px;
+	height: 200px;
+	position: relative;
+}
+
+.linechart__label {
+	position: absolute;
+	top: 10%;
+}
+
+.linechart__label p {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	margin: 0 !important;
+}
+.linechart__label > span {
+	font-weight: bold;
+	/* text-transform: uppercase; */
+	font-size: 0.8rem;
+}
