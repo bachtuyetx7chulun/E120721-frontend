@@ -1,8 +1,12 @@
 .linechart {
-	width: 500px;
+	width: 100%;
+	min-width: 22.5rem;
+	max-width: 500px;
 	position: relative;
 	background-color: #fff;
 	padding: 1rem;
+	padding-top: 0;
+	margin: 0 auto;
 }
 
 .linechart__label {

@@ -1,12 +1,11 @@
 import React from 'react'
-// import BarChart from './components/chart/BarChart'
-import LineChart from './components/chart/LineChart/LineChart'
 import './App.css'
+import HomePage from './pages/HomePage'
 
 function App() {
 	return (
 		<div className="app">
-			<LineChart />
+			<HomePage />
 		</div>
 	)
 }

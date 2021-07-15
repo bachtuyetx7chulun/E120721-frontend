@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
+import database from '../../../configs/db'
 import './index.css'
 
 function LineChart() {
 	const [data, setData] = useState({})
 	const [options, setOptions] = useState({})
 	useEffect(() => {
-		const getData = () => {
+		const getData = async () => {
+			const covidRecords = await (await database.ref('covids/days/').once('value')).val()
+			console.log(covidRecords)
+
 			setData({
 				labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5'],
 				datasets: [
@@ -17,7 +21,7 @@ function LineChart() {
 						fill: false,
 						cubicInterpolationMode: 'monotone',
 						tension: 0.6,
-						borderColor: '#1986b1',
+						borderColor: '#03a9f4',
 						borderWidth: 2,
 					},
 				],
