@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
+import './index.css'
 
 function LineChart() {
 	const [data, setData] = useState({})
 	const [options, setOptions] = useState({})
-	const [plugins, setPlugins] = useState([])
 	useEffect(() => {
 		const getData = () => {
 			setData({
@@ -17,13 +17,8 @@ function LineChart() {
 						fill: false,
 						cubicInterpolationMode: 'monotone',
 						tension: 0.6,
-						borderColor: 'rgba(67, 177, 230, 0.3)',
+						borderColor: '#1986b1',
 						borderWidth: 2,
-					},
-					{
-						label: 'Subcribers',
-						backgroundColor: 'red',
-						data: [3, 5, 4, 3, 2, 1, 3],
 					},
 				],
 			})
@@ -31,11 +26,6 @@ function LineChart() {
 		const getoptions = () => {
 			setOptions({
 				responsive: true,
-				// elements: {
-				// 	point: {
-				// 		radius: 0,
-				// 	},
-				// },
 				scales: {
 					x: {
 						grid: {
@@ -46,49 +36,28 @@ function LineChart() {
 						// min: 'March',
 					},
 					y: {
-						min: 0,
-						display: false,
 						grid: {
 							display: false,
 						},
+						min: 0,
+						max: 20,
+						display: true,
 					},
 				},
 			})
 		}
 
-		const getPlugins = () => {
-			const image = new Image()
-			image.src = 'https://www.chartjs.org/img/chartjs-logo.svg'
-			setPlugins([
-				{
-					id: 'custom_canvas_background_image',
-					beforeDraw: (chart) => {
-						if (image.complete) {
-							const ctx = chart.ctx
-							const { top, left, width, height } = chart.chartArea
-							const x = left + width / 2 - image.width / 2
-							const y = top + height / 2 - image.height / 2
-							ctx.drawImage(image, x, y)
-						} else {
-							image.onload = () => chart.draw()
-						}
-					},
-				},
-			])
-		}
-
 		getData()
 		getoptions()
-		getPlugins()
 	}, [])
 	return (
 		<div className="linechart">
 			<div className="linechart__label">
-				<p>Death note</p>
-				<span>Sổ sinh tử</span>
+				<p>Biểu đồ covid</p>
+				<span>Số ca / ngày</span>
 			</div>
 			<div className="linechart__chart">
-				<Line type="line" data={data} options={options} plugins={plugins} />
+				<Line type="line" data={data} options={options} />
 			</div>
 		</div>
 	)
