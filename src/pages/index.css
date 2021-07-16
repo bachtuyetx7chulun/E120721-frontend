@@ -1,27 +1,29 @@
+.home {
+	width: 100% !important;
+	max-width: 1300px;
+	margin: 0 auto;
+	margin-top: 3rem;
+}
+
 .homePage {
 	min-width: 22.5rem !important;
 	overflow: hidden;
-	width: 100%;
-	/* height: 45rem; */
+	width: 30.5rem;
 	min-height: 45rem !important;
 	background: #fff !important;
-}
-
-.homePage__layout {
-	background: #fff !important;
+	transition: all 0.3s;
 }
 
 .homePage__overlay {
 	background: #fff !important;
 	position: relative;
 	width: 30rem;
-	/* height: 35rem; */
+	height: 15rem;
 	margin: 0 auto;
 	padding-top: 3rem;
 }
 
 .homePage__space {
-	position: absolute;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -41,6 +43,7 @@
 	font-size: 1.2rem;
 	font-weight: 500;
 	color: rgb(67, 158, 233);
+	transition: all 0.3s;
 }
 
 .homePage__covid--c {
@@ -89,19 +92,33 @@
 	animation: rotate 30s ease-in-out infinite;
 }
 
-.homePage_overview {
+.homePage__overview {
 	width: 100%;
 	max-width: 500px;
-	height: 3rem;
-	position: fixed;
-	bottom: 0;
-	transform: translateX(-50%);
-	left: 50%;
-}
-
-.vietname__region {
 	font-size: 13px;
 	text-align: center;
+	font-weight: 500;
+	margin: 0 auto;
+}
+
+.homePage__overview p {
+	margin: 0 !important;
+}
+
+.color--green {
+	color: green;
+}
+
+.color--blue {
+	color: rgb(12, 123, 226);
+}
+
+.color--dark {
+	color: rgb(88, 57, 201);
+}
+
+.color--red {
+	color: rgb(219, 31, 31);
 }
 
 @keyframes rotate {
@@ -182,57 +199,100 @@
 	}
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 500px) {
 	.homePage {
-		height: 37rem;
+		margin-top: -5rem;
 	}
-
-	.homePage__overlay {
-		width: 350px;
+	.news {
+		margin-top: -10rem;
 	}
+}
 
-	.homePage__space {
-		position: absolute;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: translate(-20%, 50%);
+@media screen and (max-width: 1000px) {
+	.news {
+		padding: 1rem;
+		margin-top: -10rem;
 	}
-
-	.homePage__button {
-		text-align: center;
-		width: 100%;
-		margin-top: 10rem;
-		margin-bottom: 1rem;
-	}
-
-	.homePage__tracking {
-		position: absolute;
-		top: 10rem;
-		right: 2rem;
-		font-size: 1rem;
-		font-weight: 500;
-		color: rgb(67, 158, 233);
-	}
-
+}
+@media screen and (max-width: 1100px) {
 	.homePage__covid--c > span {
-		font-size: 7rem;
+		font-size: 10rem;
 		position: absolute;
 		font-weight: bold;
 		transform: translate(-85%, -60%);
 	}
 
+	.homePage__covid--c > span:nth-child(1) {
+		color: transparent;
+		-webkit-text-stroke: 2px #03a9f4;
+	}
+
+	.homePage__covid--c > span:nth-child(2) {
+		color: #03a9f4;
+		animation: textTransition 5s ease-in-out infinite;
+	}
+
+	.homePage__covid--vid {
+		position: relative;
+	}
 	.homePage__covid--vid > span {
-		font-size: 7rem;
+		font-size: 10rem;
 		position: absolute;
 		font-weight: bold;
 		transform: translate(-5%, -60%);
 	}
-
-	.homePage__overlay img {
-		width: 70px;
-		height: 70px;
-		animation: rotate 30s ease-in-out infinite;
+	.homePage__tracking {
+		position: absolute;
+		top: 13rem;
+		right: 4.5rem;
+		font-size: 1.2rem;
+		font-weight: 500;
+		color: rgb(67, 158, 233);
 	}
+}
+
+.news {
+	width: 100% !important;
+	height: 40rem;
+	background: #fff !important;
+	overflow-y: scroll;
+	padding-right: 1rem;
+	transition: all 0.3s;
+}
+
+.news > h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	color: rgb(89, 168, 233);
+	letter-spacing: 3px;
+	margin-bottom: 0 !important;
+}
+
+.news > h1 > img {
+	width: 20px;
+	margin-bottom: 2rem;
+}
+
+.content__time {
+	font-weight: 500;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }

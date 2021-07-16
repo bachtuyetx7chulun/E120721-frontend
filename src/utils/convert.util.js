@@ -43,3 +43,9 @@ export const getCovidsPerDay = (datas) => {
 
 	return days
 }
+
+export const getLastRecord = (datas) => {
+	const newArr = datas[datas.length - 1] || []
+	const record = newArr[newArr.length - 1] || { data: { content: '' }, time: { text: '' } }
+	return { content: record.data.content, time: record.time.text }
+}
