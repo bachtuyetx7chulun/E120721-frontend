@@ -2,7 +2,8 @@
 	min-width: 22.5rem !important;
 	overflow: hidden;
 	width: 100%;
-	height: 43rem;
+	/* height: 45rem; */
+	min-height: 45rem !important;
 	background: #fff !important;
 }
 
@@ -88,6 +89,21 @@
 	animation: rotate 30s ease-in-out infinite;
 }
 
+.homePage_overview {
+	width: 100%;
+	max-width: 500px;
+	height: 3rem;
+	position: fixed;
+	bottom: 0;
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+.vietname__region {
+	font-size: 13px;
+	text-align: center;
+}
+
 @keyframes rotate {
 	0% {
 		transform: rotate(0deg);
@@ -168,7 +184,7 @@
 
 @media screen and (max-width: 460px) {
 	.homePage {
-		height: 35rem;
+		height: 37rem;
 	}
 
 	.homePage__overlay {

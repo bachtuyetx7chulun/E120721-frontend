@@ -3,7 +3,6 @@
 	min-width: 22.5rem;
 	max-width: 500px;
 	position: relative;
-	background-color: #fff;
 	padding: 1rem;
 	padding-top: 0;
 	margin: 0 auto;
@@ -11,18 +10,21 @@
 
 .linechart__label {
 	position: absolute;
-	top: 10%;
+	top: 0%;
 	right: 1rem;
 }
 
-.linechart__label > p {
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 0.8rem;
-	margin: 0 !important;
+.linechart,
+.linechart__options,
+.linechart__chart,
+.linechart__detail {
+	background-color: #fff !important;
 }
-.linechart__label > span {
-	font-weight: 500;
-	/* text-transform: uppercase; */
-	font-size: 0.8rem;
+
+.linechart__chart {
+	margin: 0px !important;
+}
+
+.linechart__options {
+	padding-top: 1rem;
 }
